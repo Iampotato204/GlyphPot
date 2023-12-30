@@ -51,7 +51,7 @@ int MainWindow::createToolbars()
     QToolBar* toolbarOptionsToolbar = this->addToolBar("toolbarOptionsToolbar");
     //toolbarOptionsToolbar->addWidget(new UI_PushButton(glambda));
     toolbarOptionsToolbar->addWidget(new UI_PushButton([](){
-        return 0;
+        return;
     }));
     return 0;
 }

@@ -3,10 +3,11 @@
 #include <QPushButton>
 //#define param_func(x) std::function<int(int x)>
 //#define param_func std::function<int()>
-typedef std::function<int()> param_func;
+typedef std::function<void()> param_func;
 
 namespace ToolBarWidgets {
 class UI_PushButton: public QPushButton{
+    Q_OBJECT
 private:
     const static int
         UI_BUTTON_WIDTH_DEFAULT=50,
