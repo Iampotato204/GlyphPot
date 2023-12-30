@@ -8,6 +8,8 @@
 #include <QToolBar>
 #include <QPushButton>
 
+#include "toolbarWidgets.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;

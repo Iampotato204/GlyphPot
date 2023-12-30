@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->readSettings();
     //std::cout<<this->isMaximized()<<std::endl;
     //std::cout<<QVariant(this->isMaximized()).toBool()<<std::endl;
+    this->createToolbars();
     ui->setupUi(this);
 }
 
@@ -37,12 +38,21 @@ void MainWindow::writeSettings()
     app_settings.endGroup();
 }
 
+using namespace ToolBarWidgets;
 int MainWindow::createToolbars()
 {
+    //std::function<int(int a)> glambda = [](int a) {
+    std::function<int()> glambda = []() {
+        return 0;
+    };
     QToolBar* fileOptionsToolbar = this->addToolBar("fileOptionsToolbar");
     fileOptionsToolbar->addWidget(new QPushButton());
 
-    QToolBar* toolbarOptionsToolbar = this->addToolBar("fileOptionsToolbar");
-    toolbarOptionsToolbar->addWidget(new QPushButton());
+    QToolBar* toolbarOptionsToolbar = this->addToolBar("toolbarOptionsToolbar");
+    //toolbarOptionsToolbar->addWidget(new UI_PushButton(glambda));
+    toolbarOptionsToolbar->addWidget(new UI_PushButton([](){
+        return 0;
+    }));
+    return 0;
 }
 
